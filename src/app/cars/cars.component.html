@@ -1,1 +1,11 @@
 <p>cars works!</p>
+
+<h2>Listes des voitures</h2>
+
+<ul class="carList">
+
+   <li *ngFor="let car of cars">  <!-- (click)="onSelect(car)">  -->
+        <span class="badge">{{car.id}}</span> {{car.brand}}
+    </li>
+
+</ul>

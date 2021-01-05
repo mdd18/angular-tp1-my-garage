@@ -12,6 +12,7 @@ export class Car {
         public nbSeats: number) {
 
             this._isRunning = false
+        
 
         }
 
