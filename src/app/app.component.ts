@@ -13,7 +13,12 @@ export class AppComponent {
 
 
   constructor() {
-    //test
+    this.isEnable = false;
+    this.names = ["Philippe", "Benjamin"];
+  }
+
+  toggle() {
+    this.isEnable = !this.isEnable;
   }
 
 }
