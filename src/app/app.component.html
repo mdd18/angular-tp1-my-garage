@@ -338,6 +338,15 @@
 
   </div>
 
+  <div>
+    <h1> Bienvenue a {{title}} !! </h1>
+    <button (click)="toggle()">toggle</button>
+    <div *ngIf="isEnable">
+      <div *ngFor="let name of names"> <h2>Hello {{name}}</h2></div>
+    </div>
+
+  </div>
+
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
