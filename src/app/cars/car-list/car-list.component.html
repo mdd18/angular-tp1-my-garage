@@ -1,0 +1,9 @@
+<p>car-list works!</p>
+
+<ul class="carList">
+
+    <li *ngFor="let car of cars" (click)="onSelect(car)" [class.selected]="car === selectedCar">
+         <span class="badge">{{car.id}}</span> {{car.brand}}
+     </li>
+ 
+ </ul>

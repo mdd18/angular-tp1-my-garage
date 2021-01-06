@@ -2,24 +2,10 @@
 
 <h2>Listes des voitures</h2>
 
-<ul class="carList">
-
-   <li *ngFor="let car of cars" (click)="onSelect(car)">
-        <span class="badge">{{car.id}}</span> {{car.brand}}
-    </li>
-
-</ul>
-
-<div *ngIf="selectedCar">
-    <h2>{{ selectedCar.model }} détails !</h2>
 
 
-        <div>Id : {{selectedCar.id}}</div>
-        <div>Marque : {{selectedCar.brand}}</div>
-        <div>Modèle : {{selectedCar.model}}</div>
-        <input type="text" id="brand" required [(ngModel)]="selectedCar.brand" name="brand"> TODO: remove {{selectedCar.brand}}
-        <div>Prix: {{selectedCar.price}}</div>
-        <div>Puissance : {{selectedCar.horsePower}}</div>
-        <div>Poids : {{selectedCar.weight}}</div>
+<app-car-list [cars]="cars" (onSelected)="onSelect($event)"></app-car-list>
 
-</div>
+<app-car-detail [car]="selectedCar"></app-car-detail>
+
+<p>fin car works</p>

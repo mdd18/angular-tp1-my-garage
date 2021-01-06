@@ -18,6 +18,16 @@ h2 {
     border-radius: 4px;
   }
   
+  .selected {
+      background-color: #CFD8DC;
+      color: #ffffff;
+  }
+  .carList li.selected:hover {
+    color: #ffffff;
+    background-color:#BBD8DC;
+    /* left: .1em; */
+  }
+  
   .carList li:hover {
     color: #607D8B;
     background-color:#DDD;
