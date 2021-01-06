@@ -4,8 +4,21 @@
 
 <ul class="carList">
 
-   <li *ngFor="let car of cars">  <!-- (click)="onSelect(car)">  -->
+   <li *ngFor="let car of cars" (click)="onSelect(car)">
         <span class="badge">{{car.id}}</span> {{car.brand}}
     </li>
 
 </ul>
+
+<div *ngIf="selectedCar">
+    <h2>{{ selectedCar.model }} détails !</h2>
+
+
+        <div>Id : {{selectedCar.id}}</div>
+        <div>Marque : {{selectedCar.brand}}</div>
+        <div>Modèle : {{selectedCar.model}}</div>
+        <div>Prix: {{selectedCar.price}}</div>
+        <div>Puissance : {{selectedCar.horsePower}}</div>
+        <div>Poids : {{selectedCar.weight}}</div>
+
+</div>

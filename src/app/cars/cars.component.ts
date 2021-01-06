@@ -9,6 +9,8 @@ import { Car } from './shared/car.model';
 export class CarsComponent implements OnInit {
 
   cars: Car [];
+  //selectedCar: Car;
+  selectedCar : Car | null = null;
 
   constructor() {
 
@@ -25,9 +27,9 @@ export class CarsComponent implements OnInit {
   }
 
 
-  onSelect(car): void {
+  onSelect(car: Car): void {
 
-
+    this.selectedCar = car;
 
   }
 
