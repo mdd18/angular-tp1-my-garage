@@ -9,7 +9,7 @@ import { CarService } from './car.service';
 })
 export class CarsComponent implements OnInit {
 
-  cars: Car [] = [];
+  cars: Car []; // = [];
   //selectedCar: Car;
   selectedCarId : number | null;
 

@@ -20,7 +20,18 @@ export class CarService {
 
   GetAllCars() { return of(this.cars); }
 
-  GetCar(id: number) { return of(this.cars[id]); }
+  GetCar(id: number) { 
+
+    // for (let i=0; i<this.cars.length; i++) {
+    //   let currentCar = this.cars[i];
+    //   if (currentCar.id === id) {
+    //     return of(this.cars[i]); 
+    //   }
+    // }
+
+    return of(this.cars.find(c=>c.id===id));
+
+  }
 
   PostCar(car: Car) { };
   PutCar(car: Car) { };

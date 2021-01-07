@@ -7,17 +7,27 @@ import { Car } from '../shared/car.model';
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.css']
 })
-export class CarListComponent implements OnInit {
+export class CarListComponent { //implements OnInit {
 
   @Input() cars: Car[];
-  @Output() onSelected = new EventEmitter<Car>();
+  @Output() onSelected = new EventEmitter<number>();
+  selectedCar: Car;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  // ngOnInit(): void {
+  // }
 
   onSelect(selectedCar: Car) : void {
-    this.onSelected.emit(selectedCar);
+
+    if (this.selectedCar == null || selectedCar.id !== this.selectedCar.id) {
+      this.onSelected.emit(selectedCar.id);
+      this.selectedCar = selectedCar;
+    }
+
+
+
+
+    //this.onSelected.emit(selectedCar);
   }
 }

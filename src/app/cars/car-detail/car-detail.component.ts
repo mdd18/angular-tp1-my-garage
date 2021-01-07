@@ -10,8 +10,8 @@ import { CarService } from '../car.service';
 })
 export class CarDetailComponent implements OnChanges {
 
-  @Input() carId: number | null = null;
-  car: Car;
+  @Input() carId: number; // | null;
+  car: Car ; //| null = null;
 
   constructor(private carService: CarService) { }
 
