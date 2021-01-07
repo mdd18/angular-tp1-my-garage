@@ -1,19 +1,24 @@
 import { Car } from '../shared/car.model';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, Input, OnInit, OnChanges, Output, SimpleChanges } from '@angular/core';
+//import { EventEmitter } from 'events';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
   styleUrls: ['./car-detail.component.css']
 })
-export class CarDetailComponent implements OnInit {
+export class CarDetailComponent implements OnChanges {
 
-  @Input() car:Car | null = null;
+  @Input() carId: number | null = null;
+  car: Car;
 
-  constructor() { }
+  constructor(private carService: CarService) { }
 
-  ngOnInit(): void { 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.carId) {
+      this.carService.GetCar(changes.carId.currentValue).subscribe(car => this.car = car);
+    }
   }
 
 
